@@ -12,7 +12,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm run dev       # 启动开发服务器（自动打开浏览器）
-npm run build     # 生产构建到 dist/
+npm run build     # 生产构建到 dist/ 并同步到 docs/（GitHub Pages）
 npm run preview   # 预览生产构建
 ```
 
@@ -24,7 +24,7 @@ src/
 ├── config.js        # CONFIG 常量、SUBJECTS、SPORTS 定义
 ├── data/
 │   ├── db.js        # IndexedDB 封装（progress/suggested/achievements/state 四个 store）
-│   ├── tasks.js     # TASKS（43项背诵）、CHAPTER_REF（章节树）、DAILY_TASKS
+│   ├── tasks.js     # TASKS（43项背诵：27语文八上 + 16英语七下+八上）、CHAPTER_REF、DAILY_TASKS
 │   └── blindboxes.js # 盲盒内容库、每日挑战、鼓励语
 ├── core/
 │   ├── engine.js    # 日期工具（todayStr、addDays、isSunday、isTravel 等）
