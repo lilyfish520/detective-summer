@@ -119,3 +119,5 @@
 - 数据存储：IndexedDB（浏览器本地，无需账号）
 - 纯 JavaScript ES Modules
 - iPad 移动端优先，同时支持桌面端
+
+https://lilyfish520.github.io/detective-summer/
