@@ -15,12 +15,13 @@ export function parseWordbook() {
   for (const task of enTasks) {
     const lines = task.content.split('\n').filter(Boolean);
     for (const line of lines) {
-      // 格式: "word 释义" 或 "word phrase 释义"
-      const spaceIdx = line.indexOf(' ');
-      if (spaceIdx < 0) continue;
+      // 找到中文/全角标点的起始位置，此前为单词，此后为释义
+      // 支持多词短语如 "give up 放弃"、"play an important role 起到重要作用"
+      const chStart = line.search(/[一-鿿（]/);
+      if (chStart < 0) continue;
 
-      const word = line.slice(0, spaceIdx).trim();
-      const meaning = line.slice(spaceIdx + 1).trim();
+      const word = line.slice(0, chStart).trim();
+      const meaning = line.slice(chStart).trim();
 
       if (word && meaning) {
         words.push({
